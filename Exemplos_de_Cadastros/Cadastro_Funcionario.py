@@ -1,7 +1,11 @@
+#Importando a biblioteca rich para melhorar a exibição no terminal
 from rich import print
 from rich.panel import Panel
 
+#Criando a classe Funcionario para guardar os dados do funcionário
 class Funcionario:
+    
+    #Construtor da classe onde abriga todos os atributos
     def __init__(self, nome='', idade=0, setor='', cargo='', salario=0.0):
         self.nome = nome
         self.idade = idade
@@ -9,13 +13,15 @@ class Funcionario:
         self.cargo = cargo
         self.salario = salario
         
+    #Cadastro do funcionário
     def cadastrar_funcionario(self):
         self.nome = str(input("Digite o nome do funcionário: "))
         self.idade = int(input("Digite a idade do funcionário: "))
         self.setor = str(input("Digite o setor do funcionário: "))
         self.cargo = str(input("Digite o cargo do funcionário: "))
         self.salario = float(input("Digite o salário do funcionário: "))
-        
+    
+    #exibir os dados do funcionário em tabela usando Rich
     def exibir_dados(self):
         caixa = Panel(f"[bold cyan]Nome:[/bold cyan] {self.nome}\n"
                       f"[bold cyan]Idade:[/bold cyan] {self.idade}\n"
@@ -25,6 +31,8 @@ class Funcionario:
                       title="[bold green]Dados do Funcionário[/bold green]",
                       border_style="bright_blue")
         print(caixa)
+        
+#Criando um objeto da classe Funcionario, cadastrando um funcionário e exibindo os dados
 funcionario = Funcionario()
 funcionario.cadastrar_funcionario()
 funcionario.exibir_dados()
