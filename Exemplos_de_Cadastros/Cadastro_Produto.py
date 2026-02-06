@@ -4,8 +4,10 @@ from rich.table import Table
 from rich.console import Console
 console = Console()
 
+#Criando a classe para guardar os métodos do produto
 class produto:
 
+    #Construtor da classe onde abriga todos os atributos
     def __init__(self, nome = [], valor = [], codigo=[], cont = 0):
 
         self.nome = nome
